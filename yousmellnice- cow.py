@@ -9,8 +9,8 @@ client = commands.Bot(command_prefix='--')
 @client.command(name='version')
 async def version(context):
     myEmbed = discord.Embed(title="YouSmellNiceBot", description="Multi-purpose bot for funnies", color=0xf2b16b)
-    myEmbed.add_field(name="Version Code", value="v1.0.0 Beta", inline=False)
-    myEmbed.add_field(name="Date Released", value="November 02, 2020", inline=False)
+    myEmbed.add_field(name="Version Code", value="v1.0.0", inline=False)
+    myEmbed.add_field(name="Date Released", value="November 05, 2020", inline=False)
     myEmbed.set_footer(text="yousmellnice for asking me this ;)")
     myEmbed.set_author(name="Aniketh Aatipamula")
 
@@ -27,7 +27,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
-    bot_channel = client.get_channel(int)
+    bot_channel = client.get_channel(#channel-id)
     yousmellnice = get(client.emojis, name='yousmellnice')
 
     penis_message_responses = ["no penis fu", "penis", ">:("]
@@ -37,7 +37,7 @@ async def on_message(message):
     if message.content == 'ver.':
         myEmbed = discord.Embed(title="YouSmellNiceBot", description="Multi-purpose bot for funnies", color=0xf2b16b)
         myEmbed.add_field(name="Version Code", value="v1.0.0 ", inline=False)
-        myEmbed.add_field(name="Date Released", value="November 02, 2020", inline=False)
+        myEmbed.add_field(name="Date Released", value="November 05, 2020", inline=False)
         myEmbed.set_footer(text="yousmellnice for asking me this ;)")
         myEmbed.set_author(name="Aniketh Aatipamula")
         
@@ -45,12 +45,13 @@ async def on_message(message):
 
     await client.process_commands(message)
 
+    #If a message is purely the word simp react with yousmellnice
     if message.content == 'simp':
         await message.add_reaction (yousmellnice)
 
-    #React to specfic people with Reaction
+    #React to "insert-person-here" with yousmellnice
     if message.author.id == int:
-        await message.add_reaction (emoji)
+        await message.add_reaction (yousmellnice)
 
     #Pin message for andrew in his channel
     if str(message.author.id) == "#author-id" and str(message.channel.id) == "#channel-id" and "you know what sounds good rn?" in message.content:
